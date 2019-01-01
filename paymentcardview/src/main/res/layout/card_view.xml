@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent"
+    android:background = "@color/lightgray">
+
+    <android.support.v7.widget.CardView
+        android:layout_width = "match_parent"
+        android:layout_height = "200dp"
+        android:layout_margin = "10dp"
+        android:elevation = "10dp"
+        app:cardCornerRadius = "10dp">
+
+        <LinearLayout
+            android:layout_width = "match_parent"
+            android:layout_height = "match_parent"
+            android:orientation = "horizontal">
+
+            <RelativeLayout
+                android:id = "@+id/layFirst"
+                android:layout_width = "110dp"
+                android:layout_height = "match_parent"
+                android:background = "@drawable/shape_rounded_white"
+                android:padding = "8dp">
+
+                <LinearLayout
+                    android:layout_width = "match_parent"
+                    android:layout_height = "match_parent"
+                    android:orientation = "vertical">
+
+                    <ImageView
+                        android:id = "@+id/iconCancel"
+                        android:layout_width = "25dp"
+                        android:layout_height = "25dp"
+                        android:layout_marginBottom = "10dp"
+                        android:src = "@android:drawable/ic_menu_close_clear_cancel" />
+
+                    <ImageView
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:src = "@drawable/ic_credit_card" />
+
+                    <com.manojbhadane.paymentcardview.CustomTextView
+                        android:id = "@+id/txtCardTitle"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_marginTop = "8dp"
+                        android:text = "Pay Now"
+                        android:textColor = "@color/cdark"
+                        android:textSize = "17sp" />
+
+                    <com.manojbhadane.paymentcardview.CustomTextView
+                        android:id = "@+id/labelName"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_marginTop = "8dp"
+                        android:singleLine = "true"
+                        android:text = "Name"
+                        android:textSize = "12sp"
+                        android:visibility = "gone"
+                        app:textAllCaps = "true" />
+
+                    <com.manojbhadane.paymentcardview.CustomTextView
+                        android:id = "@+id/txtPayeeName"
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_marginTop = "4dp"
+                        android:singleLine = "true"
+                        android:text = "Manoj Bhadane"
+                        android:textSize = "14sp"
+                        android:visibility = "gone" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id = "@+id/btnDone"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "40dp"
+                    android:layout_alignParentBottom = "true"
+                    android:layout_marginTop = "30dp"
+                    android:background = "@drawable/rounded_button_selector"
+                    android:text = "Done"
+                    android:textColor = "@android:color/white" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width = "5dp"
+                android:layout_height = "match_parent"
+                android:background = "@color/yellow" />
+
+            <RelativeLayout
+                android:id = "@+id/laySecond"
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:background = "@drawable/shape_rounded"
+                android:padding = "8dp">
+                ®
+
+                <LinearLayout
+                    android:layout_width = "match_parent"
+                    android:layout_height = "match_parent"
+                    android:orientation = "vertical">
+
+                    <com.manojbhadane.paymentcardview.CustomTextView
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_marginTop = "10dp"
+                        android:text = "Expiration"
+                        android:textColor = "@color/gray"
+                        android:textSize = "@dimen/label_textsize"
+                        app:textAllCaps = "true" />
+
+                    <LinearLayout
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:layout_marginTop = "5dp">
+
+                        <EditText
+                            android:id = "@+id/sprmonth"
+                            android:layout_width = "50dp"
+                            android:layout_height = "wrap_content"
+                            android:background = "@drawable/shape_card_number"
+                            android:digits = "1234567890"
+                            android:gravity = "center"
+                            android:hint = "MM"
+                            android:imeOptions = "actionNext"
+                            android:inputType = "number"
+                            android:maxLength = "2"
+                            android:padding = "3dp"
+                            android:textColor = "@android:color/white"
+                            android:textSize = "@dimen/edt_txtsize" />
+
+                        <com.manojbhadane.paymentcardview.CustomTextView
+                            android:layout_width = "wrap_content"
+                            android:layout_height = "wrap_content"
+                            android:layout_marginLeft = "10dp"
+                            android:layout_marginRight = "10dp"
+                            android:text = " / "
+                            android:textColor = "@color/white" />
+
+                        <EditText
+                            android:id = "@+id/spryear"
+                            android:layout_width = "50dp"
+                            android:layout_height = "wrap_content"
+                            android:background = "@drawable/shape_card_number"
+                            android:digits = "1234567890"
+                            android:gravity = "center"
+                            android:hint = "YY"
+                            android:imeOptions = "actionNext"
+                            android:inputType = "number"
+                            android:maxLength = "2"
+                            android:padding = "3dp"
+                            android:textColor = "@android:color/white"
+                            android:textSize = "@dimen/edt_txtsize" />
+
+                        <!-- <Spinner
+                                 android:id="@+id/sprmonth"
+                                 android:layout_width="0dp"
+                                 android:backgroundTint="@color/white"
+                                 android:layout_weight="0.9"
+                                 android:layout_height="wrap_content"/>
+
+                         <Spinner
+                                 android:id="@+id/spryear"
+                                 android:layout_marginLeft="5dp"
+                                 android:layout_width="0dp"
+                                 android:backgroundTint="@color/white"
+                                 android:layout_weight="1.1"
+                                 android:layout_height="wrap_content"/>-->
+
+
+                    </LinearLayout>
+
+                    <com.manojbhadane.paymentcardview.CustomTextView
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_marginTop = "8dp"
+                        android:text = "card Number"
+                        android:textColor = "@color/gray"
+                        android:textSize = "@dimen/label_textsize"
+                        app:textAllCaps = "true" />
+
+                    <EditText
+                        android:id = "@+id/edtCardNumber"
+                        android:layout_width = "match_parent"
+                        android:layout_height = "wrap_content"
+                        android:layout_marginTop = "8dp"
+                        android:background = "@drawable/shape_card_number"
+                        android:digits = "1234567890 "
+                        android:imeOptions = "actionNext"
+                        android:maxLength = "19"
+                        android:padding = "3dp"
+                        android:paddingLeft = "8dp"
+                        android:inputType="number"
+                        android:textColor = "@android:color/white"
+                        android:textSize = "@dimen/edt_txtsize" />
+
+                    <com.manojbhadane.paymentcardview.CustomTextView
+                        android:layout_width = "wrap_content"
+                        android:layout_height = "wrap_content"
+                        android:layout_marginTop = "10dp"
+                        android:text = "CVV CODE"
+                        android:textColor = "@color/gray"
+                        android:textSize = "@dimen/label_textsize"
+                        app:textAllCaps = "true" />
+
+                    <EditText
+                        android:id = "@+id/edtCvvNumber"
+                        android:layout_width = "80dp"
+                        android:layout_height = "wrap_content"
+                        android:layout_marginTop = "8dp"
+                        android:background = "@drawable/shape_card_number"
+                        android:digits = "1234567890 "
+                        android:inputType = "number"
+                        android:maxLength = "3"
+                        android:padding = "3dp"
+                        android:paddingLeft = "8dp"
+                        android:textColor = "@android:color/white"
+                        android:textSize = "@dimen/edt_txtsize" />
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

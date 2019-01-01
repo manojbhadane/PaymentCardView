@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="red">#D50000</color>
+    <color name="yellow">#faa61a</color>
+    <color name="green">#1B5E20</color>
+    <color name="pink">#E91E63</color>
+    <color name="blue">#4079dc</color>
+    <color name="twitter">#7ab0f2</color>
+    <color name="whatsapp">#50bc4a</color>
+
+    <color name="gray">#FFA8A9A8</color>
+    <color name="lightgray">#f7f9f7</color>
+    <color name="white">#FFFFFF</color>
+
+
+    <color name="cdarkextra">#012e53</color>
+    <color name="cdark">#154a75</color>
+    <color name="clight">#0e4f85</color>
+
+
+</resources>
