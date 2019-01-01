@@ -53,11 +53,16 @@ dependencies {
 
 **Java**
 ```
+        //Init        
         PaymentCardView paymentCard = (PaymentCardView) findViewById(R.id.creditCard);
 
+        
+        //Options
         paymentCard.setCardTitle("Pay Now"); // can set from xml as well
         paymentCard.setSubmitButtonText("Done"); // can set from xml as well
 
+
+        //Callbacks
         paymentCard.setOnPaymentCardEventListener(new PaymentCardView.OnPaymentCardEventListener() {
             @Override
             public void onCardDetailsSubmit(String month, String year, String cardNumber, String cvv) {
