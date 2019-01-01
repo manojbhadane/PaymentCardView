@@ -3,6 +3,7 @@
 ![enter image description here](https://raw.githubusercontent.com/manojbhadane/PaymentCardView/master/PaymentCardView.png)
 
 
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![](https://jitpack.io/v/manojbhadane/PaymentCardView.svg)](https://jitpack.io/#manojbhadane/PaymentCardView)
 # Gradle
 **Step 1.** Add the JitPack repository to your build file
