@@ -1,5 +1,3 @@
-# PaymentCardView
-
 
 # Payment Card View 
 ![enter image description here](https://raw.githubusercontent.com/manojbhadane/PaymentCardView/master/PaymentCardView.png)
