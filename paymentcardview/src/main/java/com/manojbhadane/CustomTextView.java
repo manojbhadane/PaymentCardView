@@ -1,4 +1,4 @@
-package com.manojbhadane.paymentcardview;
+package com.manojbhadane;
 
 import android.content.Context;
 import android.graphics.Typeface;

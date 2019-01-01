@@ -17,7 +17,7 @@ allprojects {
 **Step 2.** Add the dependency
 ```
 dependencies {
-     implementation 'com.github.manojbhadane:PaymentCardView:-SNAPSHOT'
+     implementation 'com.github.manojbhadane:PaymentCardView:v1.0'
 	}
 ```
 
@@ -36,7 +36,7 @@ dependencies {
 <dependency>
 	    <groupId>com.github.manojbhadane</groupId>
 	    <artifactId>PaymentCardView</artifactId>
-	    <version>-SNAPSHOT</version>
+	    <version>-Tag</version>
 	</dependency>
 ```
 
