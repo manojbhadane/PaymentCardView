@@ -27,6 +27,16 @@ public class PaymentCardView extends RelativeLayout {
 
     private Typeface RegularTypeFace;
 
+    /**
+     * Version Commit guide on Jitpack , execute follwing commands
+     *
+     *   git tag -a v1.2 -m "first commit"
+     *   git push origin v1.2
+     *
+     * @param context
+     * @param attrs
+     */
+
     public PaymentCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;

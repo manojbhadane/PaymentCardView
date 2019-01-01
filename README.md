@@ -18,7 +18,7 @@ allprojects {
 **Step 2.** Add the dependency
 ```
 dependencies {
-     implementation 'com.github.manojbhadane:PaymentCardView:v1.1'
+     implementation 'com.github.manojbhadane:PaymentCardView:v1.2'
 	}
 ```
 
