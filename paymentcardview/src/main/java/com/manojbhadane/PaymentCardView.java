@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.*;
@@ -20,12 +21,15 @@ public class PaymentCardView extends RelativeLayout {
     private TextView mTxtCardTitle;
     private EditText mEdtCardNumber, mEdtCvv;
     private EditText mSpinnerMonth, mSpinnerYear;
+    private ImageView mImgCard;
     private OnPaymentCardEventListener mListener;
+    private Context mContext;
 
     private Typeface RegularTypeFace;
 
     public PaymentCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        mContext = context;
 
         LayoutInflater mInflater = LayoutInflater.from(context);
         View mView = mInflater.inflate(R.layout.card_view, this, true);
@@ -37,6 +41,7 @@ public class PaymentCardView extends RelativeLayout {
 
         RegularTypeFace = Typeface.createFromAsset(context.getAssets(), "Montserrat-Regular.ttf");
 
+        mImgCard = mView.findViewById(R.id.imgCard);
         mBtnSubmit = mView.findViewById(R.id.btnDone);
         mSpinnerYear = mView.findViewById(R.id.spryear);
         mSpinnerMonth = mView.findViewById(R.id.sprmonth);
@@ -79,6 +84,7 @@ public class PaymentCardView extends RelativeLayout {
                         s.insert(s.length() - 1, String.valueOf(space));
                     }
                 }
+                showCard(s.toString());
             }
         });
 
@@ -116,13 +122,19 @@ public class PaymentCardView extends RelativeLayout {
                 if (mSpinnerMonth.getText().length() > 0) {
                     if (mSpinnerYear.getText().length() > 0) {
                         if (mEdtCardNumber.getText().length() == 19) {
-                            if (mEdtCvv.getText().length() == 3) {
-                                if (mListener != null)
-                                    mListener.onCardDetailsSubmit(mSpinnerMonth.getText().toString(), mSpinnerYear.getText().toString(), mEdtCardNumber.getText().toString(), mEdtCvv.getText().toString());
+                            if (isValidCardNumber(mEdtCardNumber.getText().toString())) {
+                                if (mEdtCvv.getText().length() == 3) {
+                                    if (mListener != null)
+                                        mListener.onCardDetailsSubmit(mSpinnerMonth.getText().toString(), mSpinnerYear.getText().toString(), mEdtCardNumber.getText().toString(), mEdtCvv.getText().toString());
+                                } else {
+                                    if (mListener != null)
+                                        mListener.onError("Enter valid CVV");
+                                }
                             } else {
                                 if (mListener != null)
-                                    mListener.onError("Enter valid CVV");
+                                    mListener.onError("Enter valid card number");
                             }
+
                         } else {
                             if (mListener != null)
                                 mListener.onError("Enter valid card number");
@@ -139,6 +151,27 @@ public class PaymentCardView extends RelativeLayout {
         });
     }
 
+    private void showCard(String cNumber) {
+        String cardNumber = cNumber.replaceAll("\\s+", "");
+        if (CardType.detect(cardNumber) == CardType.MASTERCARD) {
+            mImgCard.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_mastercard));
+        } else if (CardType.detect(cardNumber) == CardType.VISA) {
+            mImgCard.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_visa));
+        } else if (CardType.detect(cardNumber) == CardType.AMERICAN_EXPRESS) {
+            mImgCard.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_american_express));
+        } else if (CardType.detect(cardNumber) == CardType.DISCOVER) {
+            mImgCard.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_discover));
+        } else if (CardType.detect(cardNumber) == CardType.JCB) {
+            mImgCard.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_jcb));
+        } else if (CardType.detect(cardNumber) == CardType.CHINA_UNION_PAY) {
+            mImgCard.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_unionpay));
+        } else if (CardType.detect(cardNumber) == CardType.DINERS_CLUB) {
+            mImgCard.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_credit_card));
+        } else if (CardType.detect(cardNumber) == CardType.UNKNOWN) {
+            mImgCard.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_credit_card));
+        }
+    }
+
     public void setCardTitle(String cardTitle) {
         if (cardTitle != null && cardTitle.length() == 0)
             mTxtCardTitle.setVisibility(GONE);
@@ -153,6 +186,24 @@ public class PaymentCardView extends RelativeLayout {
         } else {
             mBtnSubmit.setText(submitButtonText);
         }
+    }
+
+    public boolean isValidCardNumber(String cNumber) {
+        int sum = 0;
+        boolean alternate = false;
+        String cardNumber = cNumber.replaceAll("\\s+", "");
+        for (int i = cardNumber.length() - 1; i >= 0; i--) {
+            int n = Integer.parseInt(cardNumber.substring(i, i + 1));
+            if (alternate) {
+                n *= 2;
+                if (n > 9) {
+                    n = (n % 10) + 1;
+                }
+            }
+            sum += n;
+            alternate = !alternate;
+        }
+        return (sum % 10 == 0);
     }
 
 

@@ -37,7 +37,7 @@ dependencies {
 	    <groupId>com.github.manojbhadane</groupId>
 	    <artifactId>PaymentCardView</artifactId>
 	    <version>-Tag</version>
-	</dependency>
+</dependency>
 ```
 
 ## Usage
