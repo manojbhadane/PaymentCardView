@@ -5,6 +5,7 @@
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Payment%20Card%20View-brightgreen.svg?style=plastic)](https://android-arsenal.com/details/1/7417)
 [![](https://jitpack.io/v/manojbhadane/PaymentCardView.svg)](https://jitpack.io/#manojbhadane/PaymentCardView)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/manojbhadane)
 # Gradle
 **Step 1.** Add the JitPack repository to your build file
 ```
