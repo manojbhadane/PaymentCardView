@@ -40,7 +40,7 @@ dependencies {
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cv_submitBtnText="Done"
-            app:cv_cardTitle="Pay Now"></com.manojbhadane.PaymentCardView>
+            app:cv_cardTitle="Pay Now"/>
 ``` 
 
 **Java**
