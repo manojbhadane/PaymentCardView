@@ -132,7 +132,7 @@ public class PaymentCardView extends RelativeLayout {
                 if (mSpinnerMonth.getText().length() > 0) {
                     if (mSpinnerYear.getText().length() > 0) {
                         if (mEdtCardNumber.getText().length() == 19) {
-                            if (isValidCardNumber(mEdtCardNumber.getText().toString())) {
+//                            if (isValidCardNumber(mEdtCardNumber.getText().toString())) {
                                 if (mEdtCvv.getText().length() == 3) {
                                     if (mListener != null)
                                         mListener.onCardDetailsSubmit(mSpinnerMonth.getText().toString(), mSpinnerYear.getText().toString(), mEdtCardNumber.getText().toString(), mEdtCvv.getText().toString());
@@ -140,10 +140,10 @@ public class PaymentCardView extends RelativeLayout {
                                     if (mListener != null)
                                         mListener.onError("Enter valid CVV");
                                 }
-                            } else {
-                                if (mListener != null)
-                                    mListener.onError("Enter valid card number");
-                            }
+//                            } else {
+//                                if (mListener != null)
+//                                    mListener.onError("Enter valid card number");
+//                            }
 
                         } else {
                             if (mListener != null)
