@@ -13,7 +13,7 @@ An easy-to-use, customizable, Payment card view for Android.
 This library is available in **jCenter** which is the default Maven repository used in Android Studio.
 
 ## Gradle 
-**Step 1.** Add the JitPack repository to your build file
+**Step 1.** Add it in your root build.gradle at the end of repositories
 ```gradle
 allprojects {
 		repositories {
@@ -22,10 +22,10 @@ allprojects {
 		}
 	}
 ```
-**Step 2.** Add the dependency
+**Step 2.** Add the dependency in your apps module build.gradle
 ```gradle
 dependencies {
-     implementation 'com.github.manojbhadane:PaymentCardView:v1.2'
+     implementation 'com.github.manojbhadane:PaymentCardView:v1.3'
 	}
 ```
 
