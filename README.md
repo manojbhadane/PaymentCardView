@@ -1,12 +1,16 @@
 
+![enter image description here](https://raw.githubusercontent.com/manojbhadane/PaymentCardView/master/PaymentCardView.png)
 # Payment Card View 
 An easy-to-use, customizable, Payment card view for Android.
-![enter image description here](https://raw.githubusercontent.com/manojbhadane/PaymentCardView/master/PaymentCardView.png)
 
-
+### Specs
+[![API](https://img.shields.io/badge/API-14%2B-orange.svg?style=flat)](https://android-arsenal.com/api?level=14) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Payment%20Card%20View-brightgreen.svg?style=plastic)](https://android-arsenal.com/details/1/7417)
-[![](https://jitpack.io/v/manojbhadane/PaymentCardView.svg)](https://jitpack.io/#manojbhadane/PaymentCardView)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/manojbhadane)
+
+# Download
+
+This library is available in **jCenter** which is the default Maven repository used in Android Studio.
 
 ## Gradle 
 **Step 1.** Add the JitPack repository to your build file
@@ -23,25 +27,6 @@ allprojects {
 dependencies {
      implementation 'com.github.manojbhadane:PaymentCardView:v1.2'
 	}
-```
-
-## Maven
-**Step 1.** Add the JitPack repository to your build file
-```markup
-	<repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-	</repositories>
-```
-**Step 2.** Add the dependency
-```markup
-<dependency>
-	    <groupId>com.github.manojbhadane</groupId>
-	    <artifactId>PaymentCardView</artifactId>
-	    <version>-Tag</version>
-</dependency>
 ```
 
 # Usage
@@ -77,7 +62,6 @@ dependencies {
 
             }
         });
-
 ```
 
 # Customization
