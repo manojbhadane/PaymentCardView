@@ -44,7 +44,7 @@ dependencies {
 </dependency>
 ```
 
-## Usage
+# Usage
 **XML**
 ```xml
 <com.manojbhadane.PaymentCardView
