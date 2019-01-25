@@ -1,5 +1,6 @@
 
 ![enter image description here](https://raw.githubusercontent.com/manojbhadane/PaymentCardView/master/PaymentCardView.png)
+
 # Payment Card View 
 An easy-to-use, customizable, Payment card view for Android.
 
@@ -15,20 +16,10 @@ This library is available in **jCenter** which is the default Maven repository u
 
 ## Gradle 
 **Step 1.** Add it in your root build.gradle at the end of repositories
-```gradle
-allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-```
+![enter image description here](https://raw.githubusercontent.com/manojbhadane/PaymentCardView/master/appproject.png)
+
 **Step 2.** Add the dependency in your apps module build.gradle
-```gradle
-dependencies {
-     implementation 'com.github.manojbhadane:PaymentCardView:v1.3'
-	}
-```
+![enter image description here](https://raw.githubusercontent.com/manojbhadane/PaymentCardView/master/payment_dependacy.png)
 
 ### Spread Some :heart:
 [![GitHub followers](https://img.shields.io/github/followers/manojbhadane.svg?style=social&label=Follow)](https://github.com/manojbhadane)  [![Twitter Follow](https://img.shields.io/twitter/follow/manojbhadane.svg?style=social)](https://twitter.com/Manoj_bhadane) 
