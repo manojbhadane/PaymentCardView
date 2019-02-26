@@ -1,6 +1,7 @@
 
 for i in 1 2 3 4 5
 do
+  echo "------------------"
   echo "Commit Number : $i"
   echo "some data" >> sample.txt
   git add .
