@@ -7,7 +7,6 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.*;
@@ -17,21 +16,20 @@ public class PaymentCardView extends RelativeLayout {
 
     private static final char space = ' ';
 
+    private Context mContext;
     private Button mBtnSubmit;
+    private ImageView mImgCard;
     private TextView mTxtCardTitle;
+    private Typeface RegularTypeFace;
     private EditText mEdtCardNumber, mEdtCvv;
     private EditText mSpinnerMonth, mSpinnerYear;
-    private ImageView mImgCard;
     private OnPaymentCardEventListener mListener;
-    private Context mContext;
-
-    private Typeface RegularTypeFace;
 
     /**
      * Version Commit guide on Jitpack , execute follwing commands
-     *
-     *   git tag -a v1.2 -m "first commit"
-     *   git push origin v1.2
+     * <p>
+     * git tag -a v1.2 -m "first commit"
+     * git push origin v1.2
      *
      * @param context
      * @param attrs
@@ -133,13 +131,13 @@ public class PaymentCardView extends RelativeLayout {
                     if (mSpinnerYear.getText().length() > 0) {
                         if (mEdtCardNumber.getText().length() == 19) {
 //                            if (isValidCardNumber(mEdtCardNumber.getText().toString())) {
-                                if (mEdtCvv.getText().length() == 3) {
-                                    if (mListener != null)
-                                        mListener.onCardDetailsSubmit(mSpinnerMonth.getText().toString(), mSpinnerYear.getText().toString(), mEdtCardNumber.getText().toString(), mEdtCvv.getText().toString());
-                                } else {
-                                    if (mListener != null)
-                                        mListener.onError("Enter valid CVV");
-                                }
+                            if (mEdtCvv.getText().length() == 3) {
+                                if (mListener != null)
+                                    mListener.onCardDetailsSubmit(mSpinnerMonth.getText().toString(), mSpinnerYear.getText().toString(), mEdtCardNumber.getText().toString(), mEdtCvv.getText().toString());
+                            } else {
+                                if (mListener != null)
+                                    mListener.onError("Enter valid CVV");
+                            }
 //                            } else {
 //                                if (mListener != null)
 //                                    mListener.onError("Enter valid card number");
