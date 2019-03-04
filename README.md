@@ -1,6 +1,6 @@
 
 ![enter image description here](https://raw.githubusercontent.com/manojbhadane/PaymentCardView/master/PaymentCardView.png)
-# Payment Card View [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=An%20easy%20to%20use,customizable,Payment%20card%20view%20for%20Android204&url=https://github.com/manojbhadane/PaymentCardView)
+# Payment Card View [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=An%20easy%20to%20use,customizable,Payment%20card%20view%20for%20Android%204&url=https://github.com/manojbhadane/PaymentCardView)
 
 An easy-to-use, customizable, Payment card view for Android.
 
